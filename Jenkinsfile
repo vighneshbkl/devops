@@ -2,10 +2,29 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Getting the project from GIT') {
             steps {
-                echo 'Hello World Test new one'
+               echo 'Pulling..';
+                git branch: 'main',
+                url: 'https://github.com/user/project.git';
             }
         }
+        
+    stage('Cleaning the project') {
+             
+            steps {
+                echo 'cleaning project ...'
+                sh 'mvn clean'
+            }
+        }
+        
+    stage('Artifact Construction') {
+             
+            steps {
+                echo "artificat contruction"
+                sh 'mvn package'
+            }
+        }
+
     }
 }
