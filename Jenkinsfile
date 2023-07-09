@@ -1,7 +1,6 @@
 pipeline {
     agent any
-    {
-    stages
+    stages {
     stage('Getting the project from GIT') {
             steps {
                echo 'Pulling..';
