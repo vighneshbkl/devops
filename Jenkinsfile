@@ -1,7 +1,7 @@
 pipeline {
     agent any
-
-    
+    {
+    stages
     stage('Getting the project from GIT') {
             steps {
                echo 'Pulling..';
@@ -23,4 +23,5 @@ pipeline {
                 sh 'mvn package'
             }
         }
+    }
 }
