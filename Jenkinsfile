@@ -1,8 +1,8 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Getting the project from GIT') {
+    
+    stage('Getting the project from GIT') {
             steps {
                echo 'Pulling..';
                 git branch: 'main',
@@ -11,7 +11,6 @@ pipeline {
         }
         
     stage('Cleaning the project') {
-             
             steps {
                 echo 'cleaning project ...'
                 sh 'mvn clean'
@@ -19,12 +18,9 @@ pipeline {
         }
         
     stage('Artifact Construction') {
-             
             steps {
                 echo "artificat contruction"
                 sh 'mvn package'
             }
         }
-
-    }
 }
