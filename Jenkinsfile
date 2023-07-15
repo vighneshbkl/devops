@@ -31,5 +31,12 @@ stages {
                 sh 'mvn clean package'
             }
         }
+
+    stage('Test App') {
+            steps {
+                echo "Testing App"
+                sh 'mvn test'
+            }
+        }
     }
 }
