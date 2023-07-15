@@ -4,6 +4,12 @@ tools {
     maven 'maven'
 }
 stages {
+    stage("Cleanup Workspace"){
+            steps {
+                cleanWs()
+            }
+        }
+
     stage('Getting the project from GIT') {
             steps {
                echo 'Pulling..';
@@ -22,7 +28,7 @@ stages {
     stage('Artifact Construction') {
             steps {
                 echo "artificat contruction"
-                sh 'mvn package'
+                sh 'mvn clean package'
             }
         }
     }
