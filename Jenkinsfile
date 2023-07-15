@@ -27,6 +27,3 @@ stages {
         }
     }
 }
-
-s
-test
