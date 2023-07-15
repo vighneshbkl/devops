@@ -1,6 +1,9 @@
 pipeline {
-    agent any
-    stages {
+agent any
+tools {
+    maven 'maven'
+}
+stages {
     stage('Getting the project from GIT') {
             steps {
                echo 'Pulling..';
