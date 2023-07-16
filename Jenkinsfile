@@ -46,10 +46,11 @@ stages {
             }
         }
     
-    stage('Build Docker File') {
+    stage('Build & Push Docker Image') {
             steps{
                 script{
-                    sh 'docker build -t vighneshacharya/devops .'
+                    docker.withRegistry("", DOCKER_PASS)
+                    docker_image = docker.build "${IMAGE_NAME}"
                 }
             }
         }
