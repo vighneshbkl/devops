@@ -37,4 +37,13 @@ stages {
                 sh 'mvn test'
             }
         }
+    
+    stage('Build Docker File') {
+            steps{
+                script{
+                    sh 'docker build -t vighneshacharya/devops .'
+                }
+            }
+        }
+}
 }
