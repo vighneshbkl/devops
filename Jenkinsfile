@@ -42,7 +42,7 @@ stages {
     stage('Build Docker File') {
             steps {
                 script {
-                    sh 'docker build -t devops .'
+                    sh 'docker build -t vighneshacharya/devops .'
                 }
             }
         }
