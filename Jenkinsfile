@@ -38,5 +38,12 @@ stages {
                 sh 'mvn test'
             }
         }
+
+    stage('Build Docker File') {
+            script {
+                echo "Building"
+                sh 'docker build -t devops .'
+            }
+        }
     }
 }
