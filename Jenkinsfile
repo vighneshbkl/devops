@@ -40,6 +40,7 @@ stages {
         }
 
     stage('Build Docker File') {
+            steps }
             script {
                 echo "Building"
                 sh 'docker build -t devops .'
