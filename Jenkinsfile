@@ -5,13 +5,13 @@ tools {
 }
 stages {
     stage("Cleanup Workspace"){
-            steps {
+            steps{
                 cleanWs()
             }
         }
 
     stage('Getting the project from GIT') {
-            steps {
+            steps{
                echo 'Pulling..';
                 git branch: 'main',
                 url: 'https://github.com/vighneshbkl/devops';
@@ -19,29 +19,29 @@ stages {
         }
         
     stage('Cleaning the project') {
-            steps {
+            steps{
                 echo 'cleaning project ...'
                 sh 'mvn clean'
             }
         }
         
     stage('Artifact Construction') {
-            steps {
+            steps{
                 echo "artificat contruction"
                 sh 'mvn clean package'
             }
         }
 
     stage('Test App') {
-            steps {
+            steps{
                 echo "Testing App"
                 sh 'mvn test'
             }
         }
 
     stage('Build Docker File') {
-            steps {
-                script {
+            steps{
+                script{
                     sh 'docker build -t vighneshacharya/devops .'
                 }
             }
