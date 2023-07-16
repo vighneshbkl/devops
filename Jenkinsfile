@@ -12,9 +12,8 @@ stages {
 
     stage('Getting the project from GIT') {
             steps{
-               echo 'Pulling..';
-                git branch: 'main',
-                url: 'https://github.com/vighneshbkl/devops';
+                echo 'Pulling..';
+                git branch: 'main', url: 'https://github.com/vighneshbkl/devops';
             }
         }
         
